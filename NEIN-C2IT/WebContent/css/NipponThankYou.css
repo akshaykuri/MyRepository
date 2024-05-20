@@ -1,0 +1,39 @@
+html, body{height: 70%; width: 100%; border: 0; padding: 0; margin: 0; background:'last1.jpg' ;}
+
+#spacer{
+display: block;
+height: 85%;
+width: 1px;
+padding: 0;
+margin: 0;
+border: 0;
+background:images/last1.jpg ; /* same as body bg */
+float: right;
+}
+
+#bodycontent {
+width: 100%;
+margin: 0;
+padding: 0;
+border: 0;
+float: right;
+margin-right: -1px; /* this is the key to avoid the 1px jog caused by spacer */
+}
+
+
+
+
+#footer{
+display: block;
+clear: both;
+width: 100%;
+padding: 0;
+margin: 0;
+background: #ddd;
+text-align: center;
+margin-right: 0px;
+}
+
+#footer p{background: #ddd;}
+
+

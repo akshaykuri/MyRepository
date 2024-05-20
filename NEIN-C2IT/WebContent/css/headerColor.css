@@ -1,0 +1,28 @@
+
+.greenLine{
+	 background-color:#8ec300;
+	 height: 20px;
+	 border-radius:5px;
+	 color: White;
+ } 
+ .blueLine{ 
+	background-color: #2f4377;
+  	height: 20px;
+  	border-radius:5px;
+   	color:White;
+ }
+ .fieldset{
+    border-radius:10px;
+    border-color:blue;
+    background-color:#99e6ff;
+ }
+ .legend{
+   padding:5px;
+   width: 100%;
+   border: black;
+   border-radius:5px;
+   background-color:#009999;
+   color:White;
+   font-weight: bolder;
+ }
+ 

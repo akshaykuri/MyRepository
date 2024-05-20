@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MultiplePOTable" language="groovy" pageWidth="595" pageHeight="842" columnWidth="560" leftMargin="15" rightMargin="20" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="983"/>
+	<style name="table" isDefault="false">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" isDefault="false" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" isDefault="false" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" isDefault="false" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<parameter name="cs_id" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\workspace\\nepl1\\WebContent\\JRXML\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select c.cs_id,c.cs_date,c.city,c.cs_time,c.ps_raw,c.ps_upsworking,c.ps_upsbackup,
+c.ps_upspreventive,udb,cr_working,wg_firewall,fdb,ln_server,NEWINS,sr_ac,tm,tele,cctv,cctv_backup,access_con,fire_a,fire_l,ids_w,ids_l,ithardware_n,ithardware_r,quarter_r,preventive_e,main_remarks from cs_master c WHERE cs_id=$P{cs_id}]]>
+	</queryString>
+	<field name="cs_id" class="java.lang.String"/>
+	<field name="cs_date" class="java.sql.Date"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="cs_time" class="java.lang.String"/>
+	<field name="ps_raw" class="java.lang.String"/>
+	<field name="ps_upsworking" class="java.lang.String"/>
+	<field name="ps_upsbackup" class="java.lang.String"/>
+	<field name="ps_upspreventive" class="java.lang.String"/>
+	<field name="udb" class="java.lang.String"/>
+	<field name="cr_working" class="java.lang.String"/>
+	<field name="wg_firewall" class="java.lang.String"/>
+	<field name="fdb" class="java.lang.String"/>
+	<field name="ln_server" class="java.lang.String"/>
+	<field name="NEWINS" class="java.lang.String"/>
+	<field name="sr_ac" class="java.lang.String"/>
+	<field name="tm" class="java.lang.String"/>
+	<field name="tele" class="java.lang.String"/>
+	<field name="cctv" class="java.lang.String"/>
+	<field name="cctv_backup" class="java.lang.String"/>
+	<field name="access_con" class="java.lang.String"/>
+	<field name="fire_a" class="java.lang.String"/>
+	<field name="fire_l" class="java.lang.String"/>
+	<field name="ids_w" class="java.lang.String"/>
+	<field name="ids_l" class="java.lang.String"/>
+	<field name="ithardware_n" class="java.lang.String"/>
+	<field name="ithardware_r" class="java.lang.String"/>
+	<field name="quarter_r" class="java.lang.String"/>
+	<field name="preventive_e" class="java.lang.String"/>
+	<field name="main_remarks" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="17"/>
+	</title>
+	<pageHeader>
+		<band height="61"/>
+	</pageHeader>
+	<detail>
+		<band height="44" splitType="Prevent">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="44">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\csServer1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="29">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="29">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\serverHO.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="46">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="46">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\csMPLS1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="23">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="23">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\csISP.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="31">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="31">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\csInternet.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="30">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="30">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\csServerBackup.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="41">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="58" y="16" width="353" height="25"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(weekly scheduled backup)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="0" width="380" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["7) User Emails backup taken ( Automatic user backup)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="0" width="130" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{udb}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="24">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="43" y="0" width="380" height="24"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["8) Cisco  Router working (HO only ) "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="0" width="136" height="20">
+					<printWhenExpression><![CDATA[$F{cr_working}.length() > 1]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cr_working}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="25">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="45" y="0" width="380" height="25"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["9) FortiGate 500D Firewall working (HO only ) "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="0" width="135" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wg_firewall}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="25">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="425" y="0" width="135" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ln_server}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="0" width="380" height="25"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["10) Lotus Notes Server ( Working )"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="25" splitType="Immediate">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="425" y="0" width="135" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NEWINS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="0" width="380" height="25"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["11) NEWINS Apllication ( Working )"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="425" y="0" width="135" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sr_ac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="20" width="43" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="0" width="380" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["12) Server Room AC ( Working)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="20" width="345" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Temperature Maintained"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="20" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["degree"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="50">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\csPhotoCopier1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="50">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\csPrinter.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="50">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\csFax.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="200" height="50">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="cs_id">
+					<subreportParameterExpression><![CDATA[$P{cs_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\CheckSheet\\JRXML\\csBarcode.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="26">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="425" y="0" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tele}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="0" width="311" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["17) Telephone EPABX / Lines"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="42">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="425" y="0" width="151" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cctv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="16" width="289" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Backup ( no.  of days) "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="0" width="311" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["18) CCTV ( Working )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="16" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cctv_backup}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="26">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="45" y="0" width="311" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["19)  Access Controller ( Working )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="0" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{access_con}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="42">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="425" y="0" width="151" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fire_a}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="0" width="311" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["20) Fire Alarm ( Working )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="16" width="289" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["When was last checked"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="16" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fire_l}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="42">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="425" y="0" width="151" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ids_w}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="0" width="311" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["21) Instruction Deducation system ( IDS ) ( Working )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="16" width="289" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["When was last checked"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="16" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ids_l}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="42">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="42" y="0" width="311" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["22) Any IT hardware under Repair ( Pls. specify)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="16" width="289" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Status or by it will be rectified and put into use."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="16" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ithardware_n}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="0" width="151" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ithardware_r}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="78">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="42" y="0" width="311" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["23) Preventive Maintenance ( All IT equipment's)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="40" width="151" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{quarter_r}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="20" width="289" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["To be done every quater without fail"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="40" width="289" height="38"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If NO, provide reason"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="0" width="151" height="40"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{preventive_e}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="40">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<textField>
+				<reportElement x="43" y="0" width="383" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Remarks ( If any ):"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="64" y="20" width="494" height="20">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{main_remarks}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="71">
+			<textField>
+				<reportElement x="438" y="0" width="80" height="71"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="518" y="0" width="40" height="71"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

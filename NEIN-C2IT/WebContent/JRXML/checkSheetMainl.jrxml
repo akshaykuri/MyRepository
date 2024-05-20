@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ma" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="pordernon" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\workspace\\nepl1\\WebContent\\JRXML\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cs_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from cs_master where cs_id  = $P{cs_id}]]>
+	</queryString>
+	<field name="transid" class="java.lang.String"/>
+	<field name="abc1" class="java.lang.String"/>
+	<field name="abc2" class="java.lang.String"/>
+	<field name="abc3" class="java.lang.String"/>
+	<field name="abc4" class="java.lang.String"/>
+	<field name="abc5" class="java.lang.String"/>
+	<field name="termscond" class="java.lang.String"/>
+	<field name="tex2" class="java.lang.String"/>
+	<field name="tarea2" class="java.lang.String"/>
+	<field name="tarea22" class="java.lang.String"/>
+	<field name="tarea3" class="java.lang.String"/>
+	<field name="tarea33" class="java.lang.String"/>
+	<field name="tarea4" class="java.lang.String"/>
+	<field name="tarea44" class="java.lang.String"/>
+	<field name="nmrupees" class="java.lang.String"/>
+	<field name="vat3" class="java.lang.String"/>
+	<field name="abcvat1" class="java.lang.String"/>
+	<field name="vattext" class="java.lang.String"/>
+	<field name="totalcon" class="java.lang.String"/>
+	<field name="vat2" class="java.lang.String"/>
+	<field name="vat1" class="java.lang.String"/>
+	<field name="abco" class="java.lang.String"/>
+	<field name="orderval" class="java.lang.String"/>
+	<field name="warranty" class="java.lang.String"/>
+	<field name="paytrm" class="java.lang.String"/>
+	<field name="delivery" class="java.lang.String"/>
+	<field name="theName" class="java.lang.String"/>
+	<field name="po_date" class="java.lang.String"/>
+	<field name="emp" class="java.lang.String"/>
+	<field name="desg" class="java.lang.String"/>
+	<field name="taxes" class="java.lang.String"/>
+	<field name="rupes" class="java.lang.String"/>
+	<field name="textarea5" class="java.lang.String"/>
+	<field name="textarea4" class="java.lang.String"/>
+	<field name="textarea2" class="java.lang.String"/>
+	<field name="textarea3" class="java.lang.String"/>
+	<field name="textarea1" class="java.lang.String"/>
+	<field name="pordernon" class="java.lang.String"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="headline" class="java.lang.String"/>
+	<field name="itemName" class="java.lang.String"/>
+	<field name="itemQuantity" class="java.lang.String"/>
+	<field name="itemRate" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="6"/>
+	</title>
+	<pageHeader>
+		<band height="132"/>
+	</pageHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="1" width="555" height="46"/>
+				<subreportParameter name="pordernon">
+					<subreportParameterExpression><![CDATA[$P{pordernon}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "subReportVendorParamNormal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="29">
+			<textField>
+				<reportElement x="436" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="516" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMM yyyy h:mm:ss">
+				<reportElement x="0" y="0" width="227" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

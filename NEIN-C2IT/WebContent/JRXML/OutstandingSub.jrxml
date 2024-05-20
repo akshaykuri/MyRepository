@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OutstandingSub" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="formNo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select form1_no,desg,emp,status,remarks,
+f_date
+ from form1_it_clearance_item where form1_no=$P{formNo}]]>
+	</queryString>
+	<field name="form1_no" class="java.lang.String"/>
+	<field name="desg" class="java.lang.String"/>
+	<field name="emp" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="remarks" class="java.lang.String"/>
+	<field name="f_date" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="210" y="0" width="159" height="14">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Times New Roman" isBold="true" isUnderline="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Approval Routing"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="2" y="2" width="551" height="23"/>
+			</rectangle>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="466" y="7" width="66" height="14"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Date"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="4" y="6" width="85" height="17"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Name"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="335" y="7" width="65" height="14"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Remarks"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="106" y="2" width="1" height="23"/>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="205" y="3" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="274" y="2" width="1" height="22" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="109" y="8" width="96" height="17"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Designation"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="210" y="8" width="60" height="14"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Status"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="458" y="2" width="1" height="23"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="274" y="0" width="1" height="49"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="458" y="0" width="1" height="49" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="553" y="0" width="1" height="49" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="2" y="0" width="1" height="48" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement x="2" y="48" width="551" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="4" y="11" width="100" height="20"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{emp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="12" width="94" height="20"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{desg}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="205" y="0" width="1" height="49" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement x="207" y="12" width="67" height="20"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="2" width="180" height="46"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{remarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="11" width="58" height="20"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{f_date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="106" y="0" width="1" height="49" isPrintWhenDetailOverflows="true"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

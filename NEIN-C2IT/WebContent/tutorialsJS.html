@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<h1>Page change</h1>
+<p id="demo">A Paragraph</p>
+<button type="button" onclick="myFunction()">Try</button>
+</div>
+
+
+<button onclick='document.getElementById("demo").innerHTML=Date()'>The time is?</button>
+<button onclick="this.innerHTML=Date()">The time is?</button>
+
+
+<script>
+function myFunction()
+{
+	document.getElementById("demo").innerHTML = "paragraph change";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MultipleReport" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cs_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT s.si_drive,s.si_harddisk,s.si_usedspace,s.si_freespace FROM serveritem s WHERE s.si_cs_id=$P{cs_id}]]>
+	</queryString>
+	<field name="si_drive" class="java.lang.String"/>
+	<field name="si_harddisk" class="java.lang.String"/>
+	<field name="si_usedspace" class="java.lang.String"/>
+	<field name="si_freespace" class="java.lang.String"/>
+	<variable name="NO" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<printWhenExpression><![CDATA[]]></printWhenExpression>
+			<rectangle>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="17" y="0" width="538" height="29" isPrintWhenDetailOverflows="true">
+					<printWhenExpression><![CDATA[$F{si_drive}.length() > 0]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="322" y="0" width="1" height="29" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="221" y="1" width="1" height="29" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="42" y="0" width="1" height="29" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="423" y="1" width="1" height="29" isPrintWhenDetailOverflows="true"/>
+			</line>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="26" y="2" width="16" height="20">
+					<printWhenExpression><![CDATA[$F{si_drive}.length() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="0" width="132" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_freespace}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="0" width="178" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_harddisk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_usedspace}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_drive}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="csServer1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cs_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT c.si_working,s.si_drive,s.si_harddisk,s.si_usedspace,s.si_freespace,s.hdd_space,s.si_drive_type,s.si_drive_type_free FROM serveritem s INNER JOIN cs_master c ON(c.cs_id=s.si_cs_id) WHERE s.si_cs_id=$P{cs_id}]]>
+	</queryString>
+	<field name="si_working" class="java.lang.String"/>
+	<field name="si_drive" class="java.lang.String"/>
+	<field name="si_harddisk" class="java.lang.String"/>
+	<field name="si_usedspace" class="java.lang.Double"/>
+	<field name="si_freespace" class="java.lang.String"/>
+	<field name="hdd_space" class="java.lang.String"/>
+	<field name="si_drive_type" class="java.lang.String"/>
+	<field name="si_drive_type_free" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="66">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="19" y="0" width="284" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["2) Server Status ( HO only )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="46" width="205" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["HDD space"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="309" y="46" width="91" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Current  HDD Space"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="46" width="62" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Used"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="46" width="93" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Free Space"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="22" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_working}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="22" width="221" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Working"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="46" width="66" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Driver"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="38" y="0" width="205" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_harddisk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="0" width="66" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_drive}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="0" width="22" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_freespace}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="309" y="0" width="39" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hdd_space}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="356" y="0" width="44" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_drive_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="22" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_usedspace}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="422" y="0" width="40" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_drive_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="0" width="71" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{si_drive_type_free}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

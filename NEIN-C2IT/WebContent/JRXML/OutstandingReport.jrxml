@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OutstandingReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="563"/>
+	<style name="table" isDefault="false">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" isDefault="false" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" isDefault="false" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" isDefault="false" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<parameter name="formNo" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\chintu.kumar.NITTSU_DOMAIN\\Desktop\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT *  FROM form1_it_clearance  WHERE form1_no=$P{formNo}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="idextend" class="java.lang.Integer"/>
+	<field name="form_name" class="java.lang.String"/>
+	<field name="form1_no" class="java.lang.String"/>
+	<field name="branch" class="java.lang.String"/>
+	<field name="depart" class="java.lang.String"/>
+	<field name="full_name" class="java.lang.String"/>
+	<field name="emp_code" class="java.lang.String"/>
+	<field name="designation" class="java.lang.String"/>
+	<field name="r_officer" class="java.lang.String"/>
+	<field name="d_resignation" class="java.lang.String"/>
+	<field name="d_reliving" class="java.lang.String"/>
+	<field name="a_model" class="java.lang.String"/>
+	<field name="a_data_card" class="java.lang.String"/>
+	<field name="a_email" class="java.lang.String"/>
+	<field name="a_newins" class="java.lang.String"/>
+	<field name="a_domain" class="java.lang.String"/>
+	<field name="a_mobile_model" class="java.lang.String"/>
+	<field name="a_mobile_no" class="java.lang.String"/>
+	<field name="a_access_card" class="java.lang.String"/>
+	<field name="a_drive" class="java.lang.String"/>
+	<field name="a_other_asset" class="java.lang.String"/>
+	<field name="a_remarks" class="java.lang.String"/>
+	<field name="r_model" class="java.lang.String"/>
+	<field name="r_data_card" class="java.lang.String"/>
+	<field name="r_email" class="java.lang.String"/>
+	<field name="r_newins" class="java.lang.String"/>
+	<field name="r_domain" class="java.lang.String"/>
+	<field name="r_mobile_model" class="java.lang.String"/>
+	<field name="r_mobile_no" class="java.lang.String"/>
+	<field name="r_access_card" class="java.lang.String"/>
+	<field name="r_drive" class="java.lang.String"/>
+	<field name="r_other_asset" class="java.lang.String"/>
+	<field name="i_name" class="java.lang.String"/>
+	<field name="i_desg" class="java.lang.String"/>
+	<field name="i_city" class="java.lang.String"/>
+	<field name="i_b_no" class="java.lang.String"/>
+	<field name="i_admin" class="java.lang.String"/>
+	<field name="i_email_id" class="java.lang.String"/>
+	<field name="f_date" class="java.sql.Date"/>
+	<field name="desg" class="java.lang.String"/>
+	<field name="emp" class="java.lang.String"/>
+	<field name="mail" class="java.lang.String"/>
+	<field name="notServed" class="java.lang.String"/>
+	<field name="grade" class="java.lang.String"/>
+	<field name="requestOption" class="java.lang.String"/>
+	<field name="ITremark" class="java.lang.String"/>
+	<field name="Approval_status" class="java.lang.String"/>
+	<field name="Approval_sttatuss" class="java.lang.String"/>
+	<field name="Approval_remarks" class="java.lang.String"/>
+	<field name="Approval_f_date" class="java.sql.Date"/>
+	<field name="Approval_emp" class="java.lang.String"/>
+	<field name="Approval_desg" class="java.lang.String"/>
+	<field name="Approval_empp" class="java.lang.String"/>
+	<field name="Approval_desgg" class="java.lang.String"/>
+	<field name="it1a" class="java.lang.String"/>
+	<field name="it1aa" class="java.lang.String"/>
+	<field name="it2b" class="java.lang.String"/>
+	<field name="it2bb" class="java.lang.String"/>
+	<field name="it3c" class="java.lang.String"/>
+	<field name="it3cc" class="java.lang.String"/>
+	<field name="it4d" class="java.lang.String"/>
+	<field name="it4dd" class="java.lang.String"/>
+	<field name="it5e" class="java.lang.String"/>
+	<field name="it5ee" class="java.lang.String"/>
+	<field name="it6f" class="java.lang.String"/>
+	<field name="it6ff" class="java.lang.String"/>
+	<field name="it7g" class="java.lang.String"/>
+	<field name="it7gg" class="java.lang.String"/>
+	<field name="it8h" class="java.lang.String"/>
+	<field name="it8hh" class="java.lang.String"/>
+	<field name="it9i" class="java.lang.String"/>
+	<field name="it9ii" class="java.lang.String"/>
+	<field name="it10j" class="java.lang.String"/>
+	<field name="it10jj" class="java.lang.String"/>
+	<field name="a_document_hr" class="java.lang.String"/>
+	<field name="r_document_hr" class="java.lang.String"/>
+	<field name="a_co_car_hr" class="java.lang.String"/>
+	<field name="r_co_car_hr" class="java.lang.String"/>
+	<field name="a_calculator_hr" class="java.lang.String"/>
+	<field name="r_calculator_hr" class="java.lang.String"/>
+	<field name="a_conn_mobile_hr" class="java.lang.String"/>
+	<field name="r_conn_mobile_hr" class="java.lang.String"/>
+	<field name="a_mobile_handset_hr" class="java.lang.String"/>
+	<field name="r_mobile_handset_hr" class="java.lang.String"/>
+	<field name="a_id_card_hr" class="java.lang.String"/>
+	<field name="r_id_card_hr" class="java.lang.String"/>
+	<field name="a_work_key_hr" class="java.lang.String"/>
+	<field name="r_work_key_hr" class="java.lang.String"/>
+	<field name="a_any_other_hr" class="java.lang.String"/>
+	<field name="r_any_other_hr" class="java.lang.String"/>
+	<field name="a_leave_card_hr" class="java.lang.String"/>
+	<field name="r_leave_card_hr" class="java.lang.String"/>
+	<field name="a_resignation_letter_hr" class="java.lang.String"/>
+	<field name="r_resignation_letter_hr" class="java.lang.String"/>
+	<field name="a_identity_card_hr" class="java.lang.String"/>
+	<field name="r_identity_card_hr" class="java.lang.String"/>
+	<field name="a_model_info" class="java.lang.String"/>
+	<field name="r_model_info" class="java.lang.String"/>
+	<field name="a_document_ac" class="java.lang.String"/>
+	<field name="r_document_ac" class="java.lang.String"/>
+	<field name="d_new_relieved_request" class="java.lang.String"/>
+	<field name="d_new_reliving_co" class="java.lang.String"/>
+	<field name="NotHRThenEnterINTable" class="java.lang.String"/>
+	<field name="HRvalidateAC" class="java.lang.String"/>
+	<field name="HRvalidateIT" class="java.lang.String"/>
+	<field name="deleted" class="java.lang.String"/>
+	<field name="ReportingOfficerDone" class="java.lang.String"/>
+	<field name="a_nexas" class="java.lang.String"/>
+	<field name="r_nexas" class="java.lang.String"/>
+	<field name="it10jnexas" class="java.lang.String"/>
+	<field name="it10jjnexas" class="java.lang.String"/>
+	<field name="rduty" class="java.lang.String"/>
+	<field name="rkeyJob" class="java.lang.String"/>
+	<field name="rnoticePeriod" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="194" y="17" width="186" height="18"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Outstanding Dues & Handover Report"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="0" width="224" height="18"/>
+				<textElement>
+					<font size="10" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NIPPON EXPRESS (INDIA) PRIVATE LIMITED"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="155" y="1" width="71" height="18"/>
+				<imageExpression class="java.lang.String"><![CDATA["E:\\nipponlogo.gif"]]></imageExpression>
+			</image>
+		</band>
+		<band height="137">
+			<rectangle>
+				<reportElement x="3" y="1" width="552" height="134"/>
+			</rectangle>
+			<textField>
+				<reportElement x="389" y="33" width="100" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{emp_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="49" width="116" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{designation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="49" width="100" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_officer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="17" width="97" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Branch :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="16" width="100" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Department :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="31" width="87" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Name :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="33" width="100" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Emp Code :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="48" width="100" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Designation :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="48" width="100" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Reporting Officer :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="65" width="117" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{d_resignation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="66" width="100" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Date Of Resignation :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="66" width="100" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Last Served Date :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="82" width="113" height="18"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Date Of Relieving requested by the employee :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="82" width="100" height="18"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Date of Relieving as per co policy :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="102" width="100" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Grade :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="102" width="116" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Status Of Employement :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="119" width="97" height="17"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Not Served :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="120" width="38" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Days"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="102" width="100" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{requestOption}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="120" width="64" height="17"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{notServed}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="102" width="100" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{grade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="66" width="100" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{d_reliving}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="85" width="138" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{d_new_relieved_request}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="84" width="100" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{d_new_reliving_co}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="4" width="98" height="12"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{form1_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="18" width="115" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{branch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="17" width="159" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{depart}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="32" width="117" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{full_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="123" y="1" width="1" height="134"/>
+			</line>
+			<line>
+				<reportElement x="386" y="1" width="2" height="134"/>
+			</line>
+			<line>
+				<reportElement x="277" y="1" width="1" height="134"/>
+			</line>
+			<line>
+				<reportElement x="3" y="15" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="3" y="46" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="3" y="29" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="3" y="63" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="3" y="80" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="3" y="100" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="3" y="117" width="552" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="6" y="4" width="97" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Form No :"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="236">
+			<rectangle>
+				<reportElement x="2" y="25" width="552" height="162"/>
+			</rectangle>
+			<textField>
+				<reportElement x="6" y="44" width="84" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["All document taken overby:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="60" width="82" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Company Car :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="73" width="84" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Calculators :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="125" width="82" height="9"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Workstation keys :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="100" width="81" height="9"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Mobile handset :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="87" width="82" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Connection surrendered :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="113" width="81" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ID card :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="137" width="82" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Leave card enclosed:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="149" width="81" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Resignation letter enclosed:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="173" width="82" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Any Other:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="162" width="82" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Identity card enclosed:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="190" width="116" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Only For A/C Dept."]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="2" y="206" width="552" height="30"/>
+			</rectangle>
+			<textField>
+				<reportElement x="4" y="213" width="89" height="17"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Accounts - Advance / Imprest Balance:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="215" width="34" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Remarks :"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="92" y="25" width="1" height="162"/>
+			</line>
+			<line>
+				<reportElement x="190" y="25" width="1" height="161"/>
+			</line>
+			<line>
+				<reportElement x="2" y="38" width="552" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="324" y="24" width="82" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["HR Remarks"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="55" width="551" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="70" width="551" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="82" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="96" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="109" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="123" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="135" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="148" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="160" width="551" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="171" width="552" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="96" y="213" width="74" height="23"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_document_ac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="208" width="342" height="28"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_document_ac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="41" width="97" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_document_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="40" width="357" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_document_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="57" width="96" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_co_car_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="55" width="360" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_co_car_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="71" width="92" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_calculator_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="71" width="363" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_calculator_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="84" width="92" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_conn_mobile_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="83" width="360" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_conn_mobile_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="97" width="91" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_mobile_handset_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="97" width="360" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_mobile_handset_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="111" width="95" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_id_card_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="111" width="360" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_id_card_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="123" width="91" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_work_key_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="194" y="124" width="359" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_work_key_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="173" width="91" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_any_other_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="172" width="361" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_any_other_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="137" width="91" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_leave_card_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="194" y="137" width="359" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_leave_card_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="150" width="89" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_resignation_letter_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="149" width="359" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_resignation_letter_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="161" width="89" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_identity_card_hr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="194" y="161" width="359" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_identity_card_hr}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="93" y="206" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="171" y="206" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="205" y="206" width="1" height="30"/>
+			</line>
+			<textField>
+				<reportElement x="214" y="7" width="138" height="17"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Only For HR Dept."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="279">
+			<rectangle>
+				<reportElement x="2" y="19" width="552" height="179"/>
+			</rectangle>
+			<textField>
+				<reportElement x="214" y="20" width="127" height="13"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Branch IT Remarks"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="65" width="59" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Email Id :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="80" width="69" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Newins Id :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="95" width="68" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Domain User :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="51" width="61" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Data Card :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="110" width="68" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Mobile Phone Model :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="167" width="58" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NExAS ID :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="2" width="116" height="17"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["IT Asset Provided"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="182" width="69" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Any Other Asset :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="153" width="69" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Hard Disk/Pen Drive :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="140" width="69" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Access Card :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="125" width="69" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Mobile No :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="36" width="72" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Laptop/Desktop Model :"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="33" width="553" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="44" y="19" width="75" height="14"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Item Name"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="172" y="19" width="1" height="179"/>
+			</line>
+			<line>
+				<reportElement x="360" y="19" width="1" height="179"/>
+			</line>
+			<textField>
+				<reportElement x="406" y="19" width="127" height="14"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["IT Manager Remarks"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="73" y="33" width="1" height="165"/>
+			</line>
+			<line>
+				<reportElement x="2" y="46" width="553" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="60" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="75" width="553" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="91" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="106" width="553" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="121" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="135" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="149" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="163" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="178" width="553" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="75" y="34" width="95" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_model}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="48" width="95" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_data_card}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="62" width="95" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="76" width="98" height="17"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_newins}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="92" width="96" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_domain}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="107" width="96" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_mobile_model}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="123" width="94" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_mobile_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="136" width="95" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_access_card}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="150" width="94" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_drive}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="178" width="95" height="19"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_other_asset}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="164" width="94" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{a_nexas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="35" width="187" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_model}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="48" width="183" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_data_card}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="61" width="188" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="76" width="187" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_newins}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="93" width="187" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_domain}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="106" width="187" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_mobile_model}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="123" width="187" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_mobile_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="135" width="185" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_access_card}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="149" width="187" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_drive}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="179" width="188" height="19"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_other_asset}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="163" width="184" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{r_nexas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="34" width="192" height="13"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it1a}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="47" width="190" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it2b}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="62" width="189" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it3c}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="77" width="189" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it4d}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="92" width="189" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it5e}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="107" width="187" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it6f}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="123" width="189" height="11"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it7g}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="137" width="187" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it8h}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="150" width="189" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it9i}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="181" width="100" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it10j}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="164" width="188" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{it10jnexas}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="3" y="215" width="552" height="64"/>
+			</rectangle>
+			<textField>
+				<reportElement x="202" y="199" width="194" height="16"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Only For Reporting Officer"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="219" width="91" height="19"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["DUTIES RESPONSIBILITES DOCUMENTS AND FILES:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="240" width="94" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["KEY JOB CONTACTS: 	"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="260" width="91" height="18"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NOTICE PERIOD WAIVE OFF:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="224" width="34" height="15"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Remarks :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="242" width="36" height="14"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Remarks :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="259" width="34" height="16"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Remarks :"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="99" y="215" width="1" height="64"/>
+			</line>
+			<line>
+				<reportElement x="136" y="215" width="1" height="63"/>
+			</line>
+			<line>
+				<reportElement x="3" y="238" width="552" height="1"/>
+			</line>
+			<line>
+				<reportElement x="3" y="257" width="552" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="139" y="217" width="412" height="20">
+					<printWhenExpression><![CDATA[$F{rduty} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{rduty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="240" width="411" height="16">
+					<printWhenExpression><![CDATA[$F{rkeyJob} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{rkeyJob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="259" width="410" height="20">
+					<printWhenExpression><![CDATA[$F{rnoticePeriod} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{rnoticePeriod}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="85"/>
+		<band height="50">
+			<subreport>
+				<reportElement x="3" y="0" width="554" height="50"/>
+				<subreportParameter name="formNo">
+					<subreportParameterExpression><![CDATA[$P{formNo}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["C:\\workspace\\ITCLERANCE\\JRXML\\OutstandingSub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

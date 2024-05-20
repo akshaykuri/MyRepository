@@ -1,0 +1,20 @@
+ #span_logout{
+	margin:auto;float:right;
+	}
+#span_home{
+	margin:auto;float:right;width:6%;
+	}
+#span_back{
+	margin:auto;float:right;width:6%;
+	}  
+.a_link{
+	text-decoration:none;
+	} 
+	 #bodylen{
+		background-color: white;
+	margin:10px 50px;
+	/*margin: 10px 30px 5px 50px;top,right,bottom,left*/
+	min-width: 1024px;
+	background-image:url('images/modified.png');
+	
+	} 

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../Css/Formcss.css">
+
+<script type="text/javascript">
+
+
+/*function chkcontrol(j) {
+var total=0;
+for(var i=0; i < document.form1.cb.length; i++){
+if(document.form1.cb[i].checked){
+total =total +1;}
+if(total > 1){
+alert("Please Select only one")
+document.form1.cb[j].checked = false ;
+return false;
+}
+}
+} */
+$("input:checkbox").click(function() {
+    if ($(this).is(":checked")) {
+        var group = "input:checkbox[name='" + $(this).attr("name") + "']";
+        $(group).prop("checked", false);
+        $(this).prop("checked", true);
+    } else {
+        $(this).prop("checked", false);
+    }
+});
+</script>
+</head>
+<body>
+<form name="form1">
+<table>
+<tr>
+<td align="right">Request  :</td>
+<td style="font-weight:bold;font-style:italic;width:17px;"> 
+     <input style="" type ="checkbox" name = "cb" value ="new" id=""/>New
+     <input type ="checkbox" name = "cb" value ="change  " />Delete
+     <input type ="checkbox" name = "cb" value ="change" />Change</td>
+</tr>
+
+</table>
+   
+ <table style="margin-left: auto;margin-right: auto;" ><tr>
+ 
+     
+      <td style="size:1"><input  type="submit" value="SEND" name="save1" id="save1" onclick="return check();" /></td>
+   	<td style="size:1">&nbsp;&nbsp;<input type="reset"  value="RESET"/></td></tr>
+ 
+</table> 
+</form>
+</body>
+</html>

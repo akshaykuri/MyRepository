@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>C2IT</display-name>
+    
+  
+  
+  <error-page>
+    <error-code>404</error-code>
+    <location>/Error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/Error.jsp</location>
+  </error-page>
+   <context-param>
+    <param-name>UPLOAD_SUPPORTING_FILES_LOTUS</param-name>
+    <param-value>E:/neinSoft/files/C2IT/LotusSupportingFile/NEIN/CS/Lotus</param-value>
+  </context-param>
+  <servlet>
+   <description>
+		</description>
+    <display-name>Connection2</display-name>
+    <servlet-name>Connection2</servlet-name>
+    <servlet-class>CON2.Connection2</servlet-class>
+  </servlet>
+  <context-param>
+    <param-name>host</param-name>
+    <param-value>smtp.gmail.com</param-value>
+  </context-param>
+  <context-param>
+    <param-name>port</param-name>
+    <param-value>25</param-value>
+  </context-param>
+  <context-param>
+    <param-name>user</param-name>
+    <param-value>YOUR_EMAIL</param-value>
+  </context-param>
+  <context-param>
+    <param-name>pass</param-name>
+    <param-value>YOUR_PASS</param-value>
+  </context-param>
+  <servlet>
+    <description></description>
+    <display-name>ResendMail</display-name>
+    <servlet-name>ResendMail</servlet-name>
+    <servlet-class>CON2.ResendMail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResendMail</servlet-name>
+    <url-pattern>/ResendMail</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResendMailDomain</display-name>
+    <servlet-name>ResendMailDomain</servlet-name>
+    <servlet-class>CON2.ResendMailDomain</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResendMailDomain</servlet-name>
+    <url-pattern>/ResendMailDomain</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DisplaywatchResend</display-name>
+    <servlet-name>DisplaywatchResend</servlet-name>
+    <servlet-class>CON2.DisplaywatchResend</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplaywatchResend</servlet-name>
+    <url-pattern>/DisplaywatchResend</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResendMailItClearance</display-name>
+    <servlet-name>ResendMailItClearance</servlet-name>
+    <servlet-class>CON2.ResendMailItClearance</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResendMailItClearance</servlet-name>
+    <url-pattern>/ResendMailItClearance</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResendMailLotusNotes</display-name>
+    <servlet-name>ResendMailLotusNotes</servlet-name>
+    <servlet-class>CON2.ResendMailLotusNotes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResendMailLotusNotes</servlet-name>
+    <url-pattern>/ResendMailLotusNotes</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResendMailAccessCard</display-name>
+    <servlet-name>ResendMailAccessCard</servlet-name>
+    <servlet-class>CON2.ResendMailAccessCard</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResendMailAccessCard</servlet-name>
+    <url-pattern>/ResendMailAccessCard</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResendMailSharedFolder</display-name>
+    <servlet-name>ResendMailSharedFolder</servlet-name>
+    <servlet-class>CON2.ResendMailSharedFolder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResendMailSharedFolder</servlet-name>
+    <url-pattern>/ResendMailSharedFolder</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResendMailInternetAccess</display-name>
+    <servlet-name>ResendMailInternetAccess</servlet-name>
+    <servlet-class>CON2.ResendMailInternetAccess</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResendMailInternetAccess</servlet-name>
+    <url-pattern>/ResendMailInternetAccess</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResendMailNewins</display-name>
+    <servlet-name>ResendMailNewins</servlet-name>
+    <servlet-class>CON2.ResendMailNewins</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResendMailNewins</servlet-name>
+    <url-pattern>/ResendMailNewins</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResendMailDSC</servlet-name>
+    <url-pattern>/ResendMailDSC</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResendMailDSC</display-name>
+    <servlet-name>ResendMailDSC</servlet-name>
+    <servlet-class>CON2.ResendMailDSC</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <display-name>MailMessageAccessCard</display-name>
+    <servlet-name>MailMessageAccessCard</servlet-name>
+    <servlet-class>CON2.MailMessageAccessCard</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MailMessageAccessCard</servlet-name>
+    <url-pattern>/MailMessageAccessCard</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MailMessageITclearance</display-name>
+    <servlet-name>MailMessageITclearance</servlet-name>
+    <servlet-class>CON2.MailMessageITclearance</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MailMessageITclearance</servlet-name>
+    <url-pattern>/MailMessageITclearance</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MailMessageDomainUser</display-name>
+    <servlet-name>MailMessageDomainUser</servlet-name>
+    <servlet-class>CON2.MailMessageDomainUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MailMessageDomainUser</servlet-name>
+    <url-pattern>/MailMessageDomainUser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AutoSendingMessage</display-name>
+    <servlet-name>AutoSendingMessage</servlet-name>
+    <servlet-class>CON2.AutoSendingMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AutoSendingMessage</servlet-name>
+    <url-pattern>/AutoSendingMessage</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>OSDReportGen</display-name>
+    <servlet-name>OSDReportGen</servlet-name>
+    <servlet-class>CON2.OSDReportGen</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OSDReportGen</servlet-name>
+    <url-pattern>/OSDReportGen</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+      <description></description>
+    <display-name>MailMessageApplicationFormUser</display-name>
+    <servlet-name>MailMessageApplicationFormUser</servlet-name>
+    <servlet-class>CON2.MailMessageApplicationFormUser</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>MailMessageApplicationFormUser</servlet-name>
+    <url-pattern>/MailMessageApplicationFormUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+      <description></description>
+    <display-name>MailMessageApplicationFormUserEmail</display-name>
+    <servlet-name>MailMessageApplicationFormUserEmail</servlet-name>
+    <servlet-class>CON2.MailMessageApplicationFormUserEmail</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>MailMessageApplicationFormUserEmail</servlet-name>
+    <url-pattern>/MailMessageApplicationFormUserEmail</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+      <description></description>
+    <display-name>MailMessageApplicationFormUserNewins</display-name>
+    <servlet-name>MailMessageApplicationFormUserNewins</servlet-name>
+    <servlet-class>CON2.MailMessageApplicationFormUserNewins</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>MailMessageApplicationFormUserNewins</servlet-name>
+    <url-pattern>/MailMessageApplicationFormUserNewins</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+      <description></description>
+    <display-name>MailMessageApplicationFormUserSubmission</display-name>
+    <servlet-name>MailMessageApplicationFormUserSubmission</servlet-name>
+    <servlet-class>CON2.MailMessageApplicationFormUserSubmission</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>MailMessageApplicationFormUserSubmission</servlet-name>
+    <url-pattern>/MailMessageApplicationFormUserSubmission</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>AutoSendingMessageAdmin</display-name>
+    <servlet-name>AutoSendingMessageAdmin</servlet-name>
+    <servlet-class>CON2.AutoSendingMessageAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AutoSendingMessageAdmin</servlet-name>
+    <url-pattern>/AutoSendingMessageAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CurrentTime</display-name>
+    <servlet-name>CurrentTime</servlet-name>
+    <servlet-class>CON2.CurrentTime</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CurrentTime</servlet-name>
+    <url-pattern>/CurrentTime</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DateFormat</display-name>
+    <servlet-name>DateFormat</servlet-name>
+    <servlet-class>CON2.DateFormat</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DateFormat</servlet-name>
+    <url-pattern>/DateFormat</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PostMail</display-name>
+    <servlet-name>PostMail</servlet-name>
+    <servlet-class>CON2.PostMail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostMail</servlet-name>
+    <url-pattern>/PostMail</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Connection2</servlet-name>
+    <url-pattern>/Connection2</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+    <description></description>
+    <display-name>lotusSupportingFile</display-name>
+    <servlet-name>lotusSupportingFile</servlet-name>
+    <servlet-class>CON2.lotusSupportingFile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>lotusSupportingFile</servlet-name>
+    <url-pattern>/lotusSupportingFile</url-pattern>
+  </servlet-mapping>
+   
+    <servlet>
+    <servlet-name>callForReport</servlet-name>
+    <servlet-class>CON2.CallForPrint</servlet-class>
+  </servlet>   
+  <servlet-mapping>
+    <servlet-name>callForReport</servlet-name>
+    <url-pattern>/callForReport</url-pattern>
+  </servlet-mapping>
+  
+   <!-- <listener>
+    <listener-class>CON2.ReminderBackup</listener-class>
+   </listener>
+  -->
+  <!--  <listener>
+    <listener-class>CON2.Reminder_listners</listener-class>
+   </listener>  -->
+   
+								  <listener>
+								    <listener-class>CON2.ReminderGatePass</listener-class>
+								  </listener>
+								  
+								  <listener>
+								    <listener-class>CON2.ReminderC2ITApplicationForm_Listener</listener-class>
+								  </listener>
+  
+   <listener>
+    <listener-class>CON2.ReminderITClearancePending</listener-class>
+  </listener>
+  
+  
+  <listener>
+    <listener-class>CON2.MgmtReport_Listners</listener-class>
+  </listener> 
+    
+     <listener>
+  <listener-class>CON2.audit_initiator_listeners</listener-class>
+  </listener>
+    
+   <servlet>
+  <servlet-name>AMCcallForReport</servlet-name> 
+  <servlet-class>CON2.AMCCallForPrint</servlet-class> 
+  </servlet>
+<servlet-mapping>
+  <servlet-name>AMCcallForReport</servlet-name> 
+  <url-pattern>/AMCcallForReport</url-pattern> 
+  </servlet-mapping>
+  
+ <servlet>
+  <servlet-name>gatePassRep</servlet-name> 
+  <servlet-class>CON2.gatePassRep</servlet-class> 
+  </servlet>
+<servlet-mapping>
+  <servlet-name>gatePassRep</servlet-name> 
+  <url-pattern>/gatePassRep</url-pattern> 
+  </servlet-mapping>
+  
+  
+  <welcome-file-list>
+    <welcome-file>HOME.html</welcome-file>
+    <welcome-file>HOME.htm</welcome-file>
+    <welcome-file>HOME.jsp</welcome-file>
+    <welcome-file>HOME.html</welcome-file>
+    <welcome-file>HOME.htm</welcome-file>
+    <welcome-file>HOME.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  
+</web-app>

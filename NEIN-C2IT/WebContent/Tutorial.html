@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="HTML, CSS, XML, JavaScript; charset=UTF-8">
+        <link rel="stylesheet" href="layout.css" ... />
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+        <title>Logout</title>
+    </head>
+
+
+<script type="text/javascript">
+function btnClick() { 
+    close(); 
+/*     if(!close())
+    	{
+    	alert("Oops sorry \n \n \t \t Click on back button");
+    	} */
+}
+</script>
+<style>
+a:link    {color:green; background-color:transparent; text-decoration:none}
+a:visited {color:pink; background-color:transparent; text-decoration:none}
+a:hover   {color:red; background-color:transparent; text-decoration:underline}
+a:active  {color:yellow; background-color:transparent; text-decoration:underline}
+</style>
+<style type="text/css">
+.color-grey
+{ background-color: #555;
+  border-radius: 55px;}
+.color-grey:hover 
+{ background: red;
+  border-radius: 55px;}
+.center{
+text-align: center;
+font-size: 18px;
+
+}
+#pa{
+
+  background-color: white;
+}
+div {
+/*   background: #466368;
+  background: radial-gradient(#648880, #293f50); */
+  border-radius: 55px;
+  height: 220px;
+  /* background-image: images/workInProgress.jpg; */
+  background: url("images/workInProgress.jpg") 50px 10% no-repeat,url("images/workInProgress.jpg") 820px 0 no-repeat, linear-gradient(red, #5c9e19);
+}
+</style>
+<style type="text/css">
+span.note {
+    font-size: 120%;
+    color: red;
+}
+p.note{
+   font-size: 150%;
+   color: green;
+}
+</style>
+
+    </head>
+    
+
+
+
+
+
+
+
+
+    <body>
+      <div>
+     <section class="center">
+       <h1>Work in <ins>Progress</ins></h1>
+          <h1>Work in <del>Progress</del></h1>
+             <h1>Work in <sub>Progress</sub></h1>
+                <h1>Work in <sup>Progress</sup></h1>
+                   <h1>Work in <mark>Progress</mark></h1>
+       <h6>Patience is not the<q>ability</q> to wait, <br> but how you act while you're waiting.</h6>
+       <blockquote cite="http://neinsoft.nittsu.co.in:8185/NEIN/" >For 50 years, WWF has been protecting the future of nature.
+The world's leading conservation organization,
+WWF works in 100 countries and is supported by
+1.2 million members in the United States and
+close to 5 million globally.</blockquote>
+<a href="http://neinsoft.nittsu.co.in:8185/NEIN/">HOME LINK</a>
+<p>
+<abbr title="Redirects you to home page">HOME</abbr> <cite> Have many application</cite>
+</p>
+        </section>
+        <br>
+        <br>
+        <br>  <br>
+      <br>
+        <p class="center" style="font-size:16px;color:black">
+        <input class="color-grey" type="button" value="Back" onclick="history.go(-1);" />
+        <input class="color-grey" type="button" value="Close" onclick="btnClick();"></p>
+      <br>
+      <br>
+      
+      <p align="right">
+           
+                <font color="blue" style="font-size:12px;">&copy;<i>2016 Developing by NEIN HO IT.</i></font>
+      </p>
+			<!-- <ul style="list-style-type:disc"> --><!-- circle -->
+			<ol type="A"><!-- by default numbers  type="1" , I for roman number , i lower roman number,-->
+			  <li>Coffee</li>
+			  <li>Tea</li>
+			  <li>Milk</li>
+			</ol>
+			<fieldset>
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+  </dl>
+<h1>My <span class="note">Important</span> Heading</h1>
+<p class="note">This is some <span class="note">important</span> text.</p>
+</fieldset>
+
+<iframe src="http://neinsoft.nittsu.co.in:8185/NEIN/" name="iframe_a"></iframe>
+
+<p><a href="http://neinsoft.nittsu.co.in:8185/NEIN/" target="iframe_a">W3Schools.com</a></p>
+<base href="http://www.w3schools.com/images/" target="_blank">
+
+
+<form action="action_page.php">
+  <input list="browsers">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist> 
+</form>
+<form action="action_page.php">
+  Username: <input type="text" name="user">
+  Encryption: <keygen name="security">
+  <input type="submit">
+</form>
+<form action="action_page.php" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  <input type="range"  id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <input type="submit">
+</form>
+
+
+Quantity:
+  <input type="number" name="points" min="0" max="100" step="5" value="30">
+
+  </p>
+  <p>
+   Select your favorite color:
+  <input type="color" name="favcolor">
+   <input type="range" name="points" min="0" max="10">
+  </p>
+  
+  <p>
+     Birthday:
+  <input type="date" name="bday">
+  <p>
+    Enter a date before 1980-01-01:
+  <input type="date" name="bday" max="1979-12-31"><br>
+  Enter a date after 2000-01-01:
+  <input type="date" name="bday" min="2000-01-02"><br>
+  Birthday (month and year):
+  <input type="month" name="bdaymonth">
+ 
+   Select a week:
+  <input type="week" name="week_year">
+
+    Select a time:
+  <input type="time" name="usr_time">
+ 
+    Birthday (date and time):
+  <input type="datetime" name="bdaytime">
+   Birthday (date and time):
+  <input type="datetime-local" name="bdaytime">
+    E-mail:
+  <input type="email" name="email">
+    Search Google:
+  <input type="search" name="googlesearch">
+  </p>
+  
+  <p>
+  First name:<input type="text" name="fname" autofocus>
+  </p>
+<p>
+<form action="action_page.php">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  <input type="submit" value="Submit"><br>
+  <input type="submit" formaction="demo_admin.asp"
+  value="Submit as admin">
+</form>
+</p>
+
+<p>
+<form action="demo_post_enctype.asp" method="post">
+  First name: <input type="text" name="fname"><br>
+  <input type="submit" value="Submit">
+  <input type="submit" formenctype="multipart/form-data"
+  value="Submit as Multipart/form-data">
+</form>
+</p>
+
+<p>
+Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+Username: <input type="text" name="usrname" required>
+</p>
+      </div>
+    </body>
+
+   <br><br><br><br><br><br><br><br> 
+</html>

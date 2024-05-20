@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cs18to25" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cs_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT tele,cctv,cctv_backup,access_con,fire_a,fire_l,ids_w,ids_l,ithardware_r,ithardware_n,preventive_e,quarter_r,main_remarks FROM cs_master WHERE cs_id=$P{cs_id}]]>
+	</queryString>
+	<field name="tele" class="java.lang.String"/>
+	<field name="cctv" class="java.lang.String"/>
+	<field name="cctv_backup" class="java.lang.String"/>
+	<field name="access_con" class="java.lang.String"/>
+	<field name="fire_a" class="java.lang.String"/>
+	<field name="fire_l" class="java.lang.String"/>
+	<field name="ids_w" class="java.lang.String"/>
+	<field name="ids_l" class="java.lang.String"/>
+	<field name="ithardware_r" class="java.lang.String"/>
+	<field name="ithardware_n" class="java.lang.String"/>
+	<field name="preventive_e" class="java.lang.String"/>
+	<field name="quarter_r" class="java.lang.String"/>
+	<field name="main_remarks" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="318" splitType="Stretch">
+			<textField>
+				<reportElement x="24" y="0" width="311" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["18) Telephone EPABX / Lines"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="26" width="311" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["19) CCTV ( Working )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="68" width="311" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["20)  Access Controller ( Working )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="94" width="311" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["21) Fire Alarm ( Working )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="136" width="311" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["22) Instruction Deducation system ( IDS ) ( Working )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="178" width="311" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["23) Any IT hardware under Repair ( Pls. specify)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="194" width="289" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Status or by it will be rectified and put into use."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="42" width="289" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Backup ( no.  of days) "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="110" width="289" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["When was last checked"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="152" width="289" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["When was last checked"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="220" width="311" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["24) Preventive Maintenance ( All IT equipment's)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="240" width="289" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["To be done every quater without fail"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="260" width="289" height="38"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["If NO, provide reason"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="0" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tele}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="26" width="151" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cctv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="42" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cctv_backup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="68" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{access_con}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="94" width="151" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fire_a}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="110" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fire_l}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="136" width="151" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ids_w}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="152" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ids_l}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="178" width="151" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ithardware_r}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="194" width="151" height="26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ithardware_n}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="220" width="151" height="40"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{preventive_e}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="260" width="151" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{quarter_r}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="298" width="383" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Remarks ( If any ):"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="61" y="0" width="494" height="20">
+					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() ==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{main_remarks}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

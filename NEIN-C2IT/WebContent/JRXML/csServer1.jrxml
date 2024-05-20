@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="csServer1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cs_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT c.e_name,c.cs_id,c.cs_date,c.city,c.cs_time,c.ps_raw,c.ps_upsworking,c.ps_upsbackup,
+c.ps_upspreventive,c.si_working FROM cs_master c WHERE cs_id=$P{cs_id}]]>
+	</queryString>
+	<field name="e_name" class="java.lang.String"/>
+	<field name="cs_id" class="java.lang.String"/>
+	<field name="cs_date" class="java.sql.Date"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="cs_time" class="java.lang.String"/>
+	<field name="ps_raw" class="java.lang.String"/>
+	<field name="ps_upsworking" class="java.lang.String"/>
+	<field name="ps_upsbackup" class="java.lang.String"/>
+	<field name="ps_upspreventive" class="java.lang.String"/>
+	<field name="si_working" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="262">
+			<textField>
+				<reportElement x="38" y="202" width="254" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["UPS Backup time ( to be checked weekly once)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="182" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ps_upsworking}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="461" y="85" width="94" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{city}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="461" y="105" width="94" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{cs_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="12" width="555" height="30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="15" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["NIPPON EXPRESS (INDIA) PRIVATE LIMITED"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="142" width="254" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["1) Power supply"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="162" width="254" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["RAW Power Working"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="105" width="72" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Date:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="242" width="254" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["(to be checked 3 month once)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="162" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ps_raw}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="104" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cs_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="104" width="76" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Check Sheet No:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="182" width="254" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["UPS Working"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="0" y="42" width="555" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["IT CHECK SHEET"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="222" width="254" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["UPS Preventive Maintenance"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="203" width="39" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ps_upsbackup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="242" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ps_upspreventive}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="84" width="71" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Location:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="84" width="76" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["System Admin:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="84" width="202" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{e_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="203" width="55" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["hours"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="223" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ps_upspreventive}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="86" y="12" width="22" height="20"/>
+				<imageExpression class="java.lang.String"><![CDATA["E:\\nipponlogo.gif"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

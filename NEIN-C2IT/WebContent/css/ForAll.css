@@ -1,0 +1,11 @@
+@MEDIA screen and (min-device-width: 1024px) {
+	#bodyleng {
+	min-width: 1024px;
+}
+}
+
+@MEDIA screen and (min-device-width:480px) {
+	#bodyleng {
+	min-width: 480px;
+}	
+}

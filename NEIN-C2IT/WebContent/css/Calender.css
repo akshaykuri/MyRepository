@@ -1,0 +1,212 @@
+/* 
+    Document   : Calender
+    Created on : May 20, 2009, 5:23:35 PM
+    Author     : root
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#CalendarControlIFrame {
+  display: none;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  height: 250px;
+  width: 250px;
+  z-index: 99;
+}
+
+#CalendarControl {
+  position:absolute;
+  background-color:#FFF;
+  margin:0;
+  padding:0;
+  display:none;
+  z-index: 100;
+}
+
+#CalendarControl table {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 8pt;
+  border-left: 1px solid #336;
+  border-right: 1px solid #336;
+}
+
+#CalendarControl th {
+  font-weight: normal;
+}
+
+#CalendarControl th a {
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFF;
+  padding: 1px;
+}
+
+#CalendarControl td {
+  text-align: center;
+}
+
+#CalendarControl .header {
+  background-color: #336;
+}
+
+#CalendarControl .weekday {
+  background-color: #DDD;
+  color: #000;
+}
+
+#CalendarControl .weekend {
+  background-color: #FFC;
+  color: #000;
+}
+
+#CalendarControl .current {
+  border: 1px solid #339;
+  background-color: #336;
+  color: #FFF;
+}
+
+#CalendarControl .weekday,
+#CalendarControl .weekend,
+#CalendarControl .current {
+  display: block;
+  text-decoration: none;
+  border: 1px solid #FFF;
+  width: 2em;
+}
+
+#CalendarControl .weekday:hover,
+#CalendarControl .weekend:hover,
+#CalendarControl .current:hover {
+  color: #FFF;
+  background-color: #336;
+  border: 1px solid #999;
+}
+
+#CalendarControl .previous {
+  text-align: left;
+}
+
+#CalendarControl .next {
+  text-align: right;
+}
+
+#CalendarControl .previous,
+#CalendarControl .next {
+  padding: 1px 3px 1px 3px;
+  font-size: 1.4em;
+}
+
+#CalendarControl .previous a,
+#CalendarControl .next a {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#CalendarControl .title {
+  text-align: center;
+  font-weight: bold;
+  color: #FFF;
+}
+
+#CalendarControl .empty {
+  background-color: #CCC;
+  border: 1px solid #FFF;
+}
+ .ie body{
+	font-size: 15px;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fonter{
+font-size: 0.8em;
+
+}
+
+a:visited {color:blue; background-color:transparent; text-decoration:none}
+a:hover {color:red; background-color:transparent; text-decoration:underline}
+a:active  {color:green; background-color:transparent; text-decoration:underline}
+a.top img{
+  vertical-align:     middle;
+  transition:         opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+}
+a.top:hover img{
+  opacity:            0.5;
+}
+
+
+.tdColor{
+	bordercolor :black;
+	style :border-style: solid; 
+	border-color:#2F4F4F;
+	}
+
+button, input[type="button"], input[type="submit"], input[type="reset"] {
+   border-top: 1px solid #98a2a8;
+   background: grey;
+   background: -webkit-gradient(linear, left top, left bottom, from(#d2d4d6), to(#767a7d));
+   background: -webkit-linear-gradient(top, #d2d4d6, #767a7d);
+   background: -moz-linear-gradient(top, #d2d4d6, #767a7d);
+   background: -ms-linear-gradient(top, #d2d4d6, #767a7d);
+   background: -o-linear-gradient(top, #d2d4d6, #767a7d);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: blue;
+   font-size: 10px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+button:hover, input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+button:active, input[type="button"]:active, input[type="submit"]:active , input[type="reset"]:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+
+
+span.red-tag {
+    color: red;
+    font-weight: bold;
+}
+
+

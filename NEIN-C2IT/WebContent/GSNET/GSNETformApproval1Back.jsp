@@ -1,0 +1,235 @@
+ <%@page import="CON2.MailMessageGSNET"%>
+
+<%@page language="java"%> 
+<%@page import = "java.sql.*" %> 
+<%@page import="CON2.Connection2" %> 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="sun.text.resources.FormatData"%>
+<jsp:useBean id ="nonApproveMail" class="CON2.NonApprovMail" /> 
+<jsp:useBean id ="successpoSender" class="CON2.ItNonitMailSender" /> 
+<jsp:useBean id="dateFormat" class="CON2.DateFormat"/>
+
+<jsp:useBean id = "con" class="CON2.Connection2" /> 
+
+
+
+<jsp:useBean id = "pdf" class="com.ck.file.FileAttachment" /> 
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<jsp:useBean id = "postMail" class="CON2.PostMail" /> 
+<html>
+<head>
+</head>
+<%! 
+                  MailMessageGSNET mailMessage = new MailMessageGSNET();
+                  Connection conn = null, conn1 = null,cn2=null; 
+	              Statement st= null, st1=null,st2=null,st3=null,st4=null,st5=null,st6=null,st7=null,st8=null,st9=null,st11=null;
+	              ResultSet rs = null;
+	              String message = null;
+	              %>
+	              <%
+	              
+	              cn2 = con.getConnection2();
+	              st2 = cn2.createStatement();
+	              PreparedStatement psmt=null,psmt2=null,psmt3=null,psmt4=null,psmtfi=null;
+	              %>
+	              	<%--i_name,i_desg,i_city,i_b_no,i_admin,i_email_id --%>
+<%
+//form1_it_clearance
+//form1_it_clearance_item 
+String i_name= request.getParameter("i_name");
+String i_desg= request.getParameter("i_desg");
+String i_city= request.getParameter("i_city");
+String i_b_no= request.getParameter("i_b_no");
+String i_admin= request.getParameter("i_admin");
+String i_email_id= request.getParameter("i_email_id");
+String mailid= request.getParameter("mailid");
+String full_name=request.getParameter("full_name");
+
+
+String form_no = request.getParameter("form1_no");
+String f_date = request.getParameter("f_date");
+String mmdradio = request.getParameter("mmdradio");
+
+
+
+String desg = request.getParameter("desg");
+String emp = request.getParameter("emp");
+String mail = request.getParameter("mail1");
+String empid1 = request.getParameter("empid1");
+String levelno = request.getParameter("levelno");
+
+
+
+
+String txtmail_msg = request.getParameter("txtmail_msg");
+
+
+String mmradio = request.getParameter("mmradio");
+String higherAuthority = request.getParameter("higherAuthority");
+System.out.println("higherAuthority  ???????????????????????? : "+higherAuthority);
+String msg=null;
+Date form_date=null;
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+try
+    {
+	form_date = new Date(sdf.parse(f_date).getTime());
+    }
+    catch (Exception e) 
+        {
+	    e.printStackTrace(); 
+        }
+String allMails=null,initiatorNameIfNotApproved=null;
+psmt4 = cn2.prepareStatement("SELECT mail,emp FROM form15_gsnet_item WHERE form_no=? AND status=?");
+psmt4.setString(1,form_no);
+psmt4.setString(2,"Initiator");
+ResultSet rs = psmt4.executeQuery();
+while(rs.next())
+    {
+	allMails = rs.getString(1); 
+	initiatorNameIfNotApproved =rs.getString(2);
+    }
+
+
+//System.out.println("FORM 2 NO ****************************: "+form_no);
+//System.out.println("mmdradio: "+mmdradio);
+//System.out.println("txtmail_msg : "+txtmail_msg);
+
+if(mmdradio.equals("Approved") && !higherAuthority.equals("directApproveClose"))
+        {//System.out.println("hdfsds");
+        psmt = cn2.prepareStatement("UPDATE form15_gsnet_item set status='"+mmdradio+"',remarks='"+txtmail_msg+"' where status='Pending' and form_no='"+form_no+"'");
+        int i = psmt.executeUpdate();
+        
+		psmt2 = cn2.prepareStatement("INSERT INTO form15_gsnet_item(form_no,desg,emp,status,remarks,mail,empid,levelno) VALUES(?,?,?,?,?,?,?,?)");
+		psmt2.setString(1,form_no);
+		psmt2.setString(2,desg);
+		psmt2.setString(3,emp);
+		psmt2.setString(4,"Pending");
+		psmt2.setString(5,"Pending");
+		psmt2.setString(6,mail);
+		psmt2.setString(7,empid1);
+		psmt2.setString(8,levelno);
+		int j = psmt2.executeUpdate();
+		message = mailMessage.getMailMessageGSNET(form_no.trim());
+		postMail.postMail(i_email_id,i_name,"pass1234",mail,"NEIN-C2IT GSNET USER FORM :  " +form_no+ " ",i_name+  " "+  "request you to Approve - GSNET USER FORM : " +form_no+ " <br><br><b><u> Open the following URL</u> </b><br> C2IT LINK -  https://neinsoft.nittsu.co.in:8185/NEIN-C2IT/HOME.jsp  <br> COMMON LINK - https://neinsoft.nittsu.co.in:8185/NEIN  <br><br><br><br>"+message);
+        }
+else if(mmdradio.equals("Approved")&& higherAuthority.equals("directApproveClose") )
+       {//System.out.println("hdfsds");
+       
+       
+
+    	   String[] gsnetBrCode = request.getParameterValues("gsnetBrCode[]");
+    	   String gsbrcod="";
+    	   for(int p=0;p<gsnetBrCode.length;p++)
+    	       {
+    	      	if(p==0)
+    	   		  gsbrcod=gsnetBrCode[p];
+    	     	else
+    	   		  gsbrcod=gsbrcod+","+gsnetBrCode[p];
+    	       }
+    	   System.out.println("gsnet branch code :"+gsbrcod);
+    	  //////////////////////
+    	   String[] gsnetDiv = request.getParameterValues("gsnetDiv[]");
+    	   String gsdiv="";
+    	   for(int p=0;p<gsnetDiv.length;p++)
+    	       {
+    	   	   if(p==0)
+    	   		gsdiv=gsnetDiv[p];
+    	   	    else
+    	   		gsdiv=gsdiv+","+gsnetDiv[p];
+    	       }
+           System.out.println("gsnet  div :"+gsdiv);
+    	   /////////////////////////////
+    	   String[] gsnetPdiv = request.getParameterValues("gsnetPdiv[]");
+    	   String gspdiv="";
+    	   for(int p=0;p<gsnetPdiv.length;p++)
+    	       {
+    	   	if(p==0)
+    	   		gspdiv=gsnetPdiv[p];
+    	   	else
+    	   		gspdiv=gspdiv+","+gsnetPdiv[p];
+    	       }
+    	   System.out.println("gsnet primary div :"+gspdiv);
+           ///////////////////////////////////////
+    	   String[] role = request.getParameterValues("role[]");
+    	   String rl="";
+    	   for(int p=0;p<role.length;p++)
+    	       {
+    	   	if(p==0)
+    	   		rl=role[p];
+    	   	else
+    	   		rl=rl+","+role[p];
+    	       }
+    	   System.out.println("gsnet user role:"+rl);
+    	   ////////////////////////////////
+    	   String usercode=request.getParameter("usercode");
+           String userpass=request.getParameter("userpass");  
+       
+       
+    	   psmtfi = cn2.prepareStatement("UPDATE form15_gsnet set it_userCode='"+usercode+"',it_password='"+userpass+"',it_branchAccess='"+gsbrcod+"',it_division='"+gsdiv+"',it_primaryDiv='"+gspdiv+"',it_role='"+rl+"' where  form_no='"+form_no+"'");
+           int ifi = psmtfi.executeUpdate();
+       
+       
+       
+       
+     
+       
+       psmt = cn2.prepareStatement("UPDATE form15_GSNET_item set status='"+mmdradio+"',remarks='"+txtmail_msg+"' where status='Pending' and form_no='"+form_no+"'");
+       int i = psmt.executeUpdate();
+
+
+       message = mailMessage.getMailMessageGSNET(form_no.trim());
+       String allMails1=null;
+       psmt4 = cn2.prepareStatement("SELECT mail,emp FROM form15_gsnet_item WHERE form_no=?");
+	   psmt4.setString(1,form_no);
+       ResultSet rs1 = psmt4.executeQuery();
+       while(rs1.next())
+          {
+          allMails1 = rs1.getString(1); 
+          postMail.postMail(i_email_id,i_name,"pass1234",allMails1,"NEIN-C2IT GSNET USER FORM :  " +form_no+ " "," "+  " GSNET USER FORM : "+form_no+" approved by " +i_name+ " . <br>Remarks : "+txtmail_msg+"<br><b><u> Open the following URL</u> </b><br> C2IT LINK -  https://neinsoft.nittsu.co.in:8185/NEIN-C2IT/HOME.jsp  <br> COMMON LINK - https://neinsoft.nittsu.co.in:8185/NEIN  <br><br><br><br>"+message);
+          }
+       
+       postMail.postMail(i_email_id,i_name,"pass1234",mailid,"NEIN-C2IT GSNET USER FORM :  " +form_no+ " "," "+  "Dear Mr/Ms. "+full_name+", <br><br><br> GSNET USER FORM : "+form_no+" Approved and Created userid and password by " +i_name+ " .<br>User Id: "+usercode+" <br> Password :"+userpass+" <br>Remarks : "+txtmail_msg+"<br><b><u> Open the following URL</u> </b><br> C2IT LINK -  https://neinsoft.nittsu.co.in:8185/NEIN-C2IT/HOME.jsp  <br> COMMON LINK - https://neinsoft.nittsu.co.in:8185/NEIN  <br><br><br><br>");
+
+       String CCMail="nilkanth.pawar@nipponexpress.com";
+       //String CCMail="chintu.kumar@nittsu.co.in";
+       postMail.postMail(i_email_id,i_name,"pass1234",CCMail,"NEIN-C2IT GSNET USER FORM :  " +form_no+ " "," "+  " GSNET USER FORM : "+form_no+" approved by " +i_name+ " . <br>Remarks : "+txtmail_msg+"<br><b><u> Open the following URL</u> </b><br> C2IT LINK -  https://neinsoft.nittsu.co.in:8185/NEIN-C2IT/HOME.jsp  <br> COMMON LINK - https://neinsoft.nittsu.co.in:8185/NEIN  <br><br><br><br>"+message);
+       System.out.println("mail sent to nilkanth san :"+CCMail);
+  
+       }
+    else
+        {
+    	 psmt = cn2.prepareStatement("UPDATE form15_gsnet_item set status='"+mmdradio+"' , remarks='"+txtmail_msg+"' where status='Pending' and form_no='"+form_no+"'");
+         int i = psmt.executeUpdate();
+         message = mailMessage.getMailMessageGSNET(form_no.trim());
+     	String allMails1=null;
+    	psmt4 = cn2.prepareStatement("SELECT mail,emp FROM form15_gsnet_item WHERE form_no=?");
+    	psmt4.setString(1,form_no);
+    	ResultSet rs1 = psmt4.executeQuery();
+    	while(rs1.next())
+    	   {
+    	   allMails1 = rs1.getString(1); 
+           postMail.postMail(i_email_id,i_name,"pass1234",allMails1,"NEIN-C2IT GSNET USER FORM :  " +form_no+ " ",initiatorNameIfNotApproved+  " "+  "your request for - GSNET USER FORM : "+form_no+" Is NOT Approved by " +i_name+ " <br>Remarks : "+txtmail_msg+"<br><b><u> Open the following URL</u> </b><br> C2IT LINK -  https://neinsoft.nittsu.co.in:8185/NEIN-C2IT/HOME.jsp  <br> COMMON LINK - https://neinsoft.nittsu.co.in:8185/NEIN  <br><br><br><br>");
+           }	
+        }
+
+//System.out.println("desg for sending mail : "+desg);
+//System.out.println("Emp for sending mail : "+emp);
+//System.out.println("Mail id for edning mail : "+mail);
+
+
+message = null;
+
+msg = "GSNET__USER__FORM__SAVED__AND__SENT__SUCCESSFULLY";
+System.out.println("result..date..........."+form_date);
+//response.sendRedirect("ITclearanceSelectAdmin.jsp?msg=" +msg);
+response.sendRedirect("../adminHR.jsp?msg=" +msg);
+
+
+%>
+
+
+</html>
